@@ -9,8 +9,8 @@ class PaginaInicial extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/imagemfundo.png'), // Substitua pelo caminho da sua imagem
-            fit: BoxFit.cover, // Pode ajustar o ajuste da imagem
+            image: AssetImage('images/imagemfundo.png'), 
+            fit: BoxFit.cover, 
           ),
         ),
         child: Center(
@@ -18,27 +18,28 @@ class PaginaInicial extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-              'plante uma árvore,',
-              style: TextStyle(fontSize: 24,color: Color.fromARGB(255, 255, 255, 255),backgroundColor: Colors.transparent),
+              'PLANTE UMA ÁRVORE,',
+              style: TextStyle(fontFamily: 'Bebas Neue',fontSize: 24,color: Color.fromARGB(255, 255, 255, 255),backgroundColor: Colors.transparent),
             ),
               Text(
-              'traga o verde da vida.',
-              style: TextStyle(fontSize: 24,color: Color.fromARGB(255, 255, 255, 255),backgroundColor: Colors.transparent),
+              'TRAGA O VERDE DA VIDA.',
+              style: TextStyle(fontFamily: 'Bebas Neue',fontSize: 24,color: Color.fromARGB(255, 255, 255, 255),backgroundColor: Colors.transparent),
             ),
-              SizedBox(height: 10),
+              SizedBox(height: 150),
 
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/login');
                 },
-                child: Text('LOGIN'),
+                style: ElevatedButton.styleFrom( primary: Color.fromARGB(255, 56, 56, 56).withOpacity(0.5),fixedSize: Size(230, 20),),
+                child: Text('LOGIN',style: TextStyle(fontFamily: 'Bebas Neue'), ),
               ),
               SizedBox(height: 10),
               TextButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/cadastro');
                 },
-                child: const Text("Criar uma conta"),
+                child: const Text("Criar uma conta",style: TextStyle(fontFamily: 'Bebas Neue', color: Color.fromARGB(255, 255, 255, 255)), ),
               ),
             ],
           ),

@@ -11,18 +11,18 @@ class Pesquisa extends StatelessWidget {
         slivers: <Widget>[
           SliverToBoxAdapter(
             child: Container(
-              color: Colors.transparent, // Cor de fundo do conteiner do topo
-              margin: EdgeInsets.only(top: 20), // Afasta a barra de pesquisa do topo
-              height: 60, // Altura do conteiner do topo
+              color: Colors.transparent, 
+              margin: EdgeInsets.only(top: 20), 
+              height: 60, 
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Expanded(
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 40), // Espaçamento horizontal
+                      margin: EdgeInsets.symmetric(horizontal: 40), 
                       decoration: BoxDecoration(
-                        color: Colors.green, // Cor de fundo da barra de pesquisa
-                        borderRadius: BorderRadius.circular(5), // Borda arredondada
+                        color: Color.fromARGB(255, 19, 52, 20), 
+                        borderRadius: BorderRadius.circular(5), 
                       ),
                       child: Row(
                         children: [
@@ -32,14 +32,13 @@ class Pesquisa extends StatelessWidget {
                               color: Colors.white,
                             ),
                             onPressed: () {
-                              // Adicione a lógica para a ação de pesquisa aqui
+                             
                             },
                           ),
                           Expanded(
                             child: TextField(
-                              style: TextStyle(color: Colors.white),
+                              style: TextStyle(color: Colors.white, fontFamily: 'Bebas Neue'),        
                               decoration: InputDecoration(
-                                
                                 hintStyle: TextStyle(color: Colors.white),
                                 border: InputBorder.none,
                               ),
@@ -57,14 +56,15 @@ class Pesquisa extends StatelessWidget {
           
           SliverToBoxAdapter(
             child: Container(
-              color: Colors.transparent, // Cor de fundo do conteiner de cima
-              height: 200, // Altura do conteiner de cima
+              color: Colors.transparent, 
+              height: 200, 
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "PESQUISAS RECENTES",
                     style: TextStyle(
+                      fontFamily: 'Bebas Neue',
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -73,10 +73,10 @@ class Pesquisa extends StatelessWidget {
                   Expanded(
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 5, // Número de imagens
+                      itemCount: 5, 
                       itemBuilder: (context, index) {
                         return Container(
-                          width: 200, // Largura de cada item de imagem
+                          width: 200, 
                           child: Image.asset('images/tresplantas.png'),
                         );
                       },
@@ -88,7 +88,7 @@ class Pesquisa extends StatelessWidget {
                     child: IconButton(
                       icon: Icon(Icons.arrow_back),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/homepage'); // Adicione a lógica para a ação de voltar aqui
+                        Navigator.pushNamed(context, '/homepage'); 
                       },
                     ),
                   ),
@@ -97,34 +97,35 @@ class Pesquisa extends StatelessWidget {
             ),
           ),
            SliverToBoxAdapter(
-            child: SizedBox(height: 20), // Espaço entre os conteúdos
+            child: SizedBox(height: 20), 
           ),
           SliverToBoxAdapter(
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.green, // Cor de fundo do conteiner de baixo
+                color: Color.fromARGB(255, 19, 52, 20), 
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30), // Borda superior esquerda arredondada
-                  topRight: Radius.circular(30), // Borda superior direita arredondada
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30), 
                 ),
               ),
               child: Column(
                 children: [
-                  SizedBox(height: 10), // Espaço entre a parte superior e a linha decorativa
+                  SizedBox(height: 10),
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20), // Espaçamento horizontal
-                    height: 2, // Altura da linha decorativa
+                    margin: EdgeInsets.symmetric(horizontal: 20), 
+                    height: 2, 
                     width: 50,
-                    color: Colors.grey, // Cor da linha
+                    color: Colors.grey, 
                   ),
-                  SizedBox(height: 10), // Espaço entre a linha decorativa e o texto
+                  SizedBox(height: 10), 
                   Row(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 20), // Espaçamento à esquerda
+                        margin: EdgeInsets.only(left: 20), 
                         child: Text(
                           "PLANTAS POPULARES",
                           style: TextStyle(
+                            fontFamily: 'Bebas Neue',
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
@@ -139,14 +140,14 @@ class Pesquisa extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Container(
-              color: Colors.green, // Cor de fundo do conteiner de baixo
+              color: Color.fromARGB(255, 19, 52, 20),
               child: ListView.builder(
-                itemCount: 5, // Número de imagens no conteiner de baixo
+                itemCount: 5, 
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return Container(
-                    height: 100, // Altura de cada item de imagem
+                    height: 100, 
                     child: Image.asset('images/tresplantas.png'),
                   );
                 },

@@ -6,26 +6,28 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Color.fromARGB(255, 19, 52, 20),
       body: CustomScrollView(
         slivers: <Widget>[
           SliverToBoxAdapter(
             child: Container(
-              height: 50, // Altura do conteiner superior
-              color: Colors.transparent, // Cor de fundo do conteiner superior
+              height: 50, 
+              color: Colors.transparent, 
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   IconButton(
                     icon: Icon(Icons.arrow_back),
+                    color: Colors.white,
                     onPressed: () {
-                    Navigator.pushNamed(context, '/');// Adicione a lógica para a ação de voltar aqui
+                    Navigator.pushNamed(context, '/');
                     },
                   ),
                   IconButton(
                     icon: Icon(Icons.search),
+                    color: Colors.white,
                     onPressed: () {
-                    Navigator.pushNamed(context, '/pesquisa'); // Adicione a lógica para a ação de pesquisa aqui
+                    Navigator.pushNamed(context, '/pesquisa'); 
                     },
                   ),
                 ],
@@ -35,8 +37,8 @@ class Homepage extends StatelessWidget {
           ),
 SliverToBoxAdapter(
             child: Container(
-              color: Colors.transparent, // Cor de fundo do conteiner do meio
-              height: 200, // Altura do conteiner do meio
+              color: Colors.transparent, 
+              height: 200,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -44,6 +46,7 @@ SliverToBoxAdapter(
                   Text(
                     "REGA DE HOJE",
                     style: TextStyle(
+                      fontFamily: 'Bebas Neue',
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
@@ -52,11 +55,11 @@ SliverToBoxAdapter(
                   Expanded(
                     child: ListView.builder(
                       scrollDirection: Axis.horizontal,
-                      itemCount: 5, // Número de imagens
+                      itemCount: 5, 
                       itemBuilder: (context, index) {
                         return Container(
-                          width: 200, // Largura de cada item de imagem
-                          color: Colors.transparent, // Cor de fundo do item de imagem
+                          width: 200, 
+                          color: Colors.transparent, 
                           child: Image.asset('images/tresplantas.png'),
                         );
                       },
@@ -70,42 +73,43 @@ SliverToBoxAdapter(
   SliverToBoxAdapter(
             child: Container(
               decoration: BoxDecoration(
-                color: Colors.white, // Cor de fundo do conteiner de baixo
+                color: Colors.white, 
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30), // Borda superior esquerda arredondada
-                  topRight: Radius.circular(30), // Borda superior direita arredondada
+                  topLeft: Radius.circular(30), 
+                  topRight: Radius.circular(30), 
                 ),
               ),
               
               child: Column(
                 children: [
-                  SizedBox(height: 10), // Espaço entre a parte superior e a linha decorativa
+                  SizedBox(height: 10), 
                   Container(
-                    margin: EdgeInsets.symmetric(horizontal: 20), // Espaçamento horizontal
-                    height: 2, // Altura da linha decorativa
+                    margin: EdgeInsets.symmetric(horizontal: 20), 
+                    height: 2, 
                     width: 50,
-                    color: Colors.grey, // Cor da linha
+                    color: Colors.grey, 
                   ),
                   SizedBox(height: 10),
                   
-                   // Espaço entre a linha decorativa e o texto
+                   
                   Align(
                     alignment: Alignment.centerRight,
                     child: IconButton(
                       icon: Icon(Icons.add),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/homepage'); // Adicione a lógica para a ação de voltar aqui
+                        Navigator.pushNamed(context, '/homepage'); 
                       },
                     ),
                   ),
                   Row(crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 20), // Espaçamento à esquerda
+                        margin: EdgeInsets.only(left: 20), 
                         child: Text(
                           "MINHAS PLANTAS",
                           style: TextStyle(
-                            fontSize: 18,
+                            fontFamily: 'Bebas Neue',
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
                           ),
@@ -116,11 +120,12 @@ SliverToBoxAdapter(
                   Row(crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 20), // Espaçamento à esquerda
+                        margin: EdgeInsets.only(left: 20),
                         child: Text(
-                          "Você possui 8 plantas",
+                          "Você possui 15 plantas",
                           style: TextStyle(
-                            fontSize: 10,
+                            fontFamily: 'Bebas Neue',
+                            fontSize: 12,
                             fontWeight: FontWeight.bold,
                             color: Colors.grey,
                           ),
@@ -134,14 +139,14 @@ SliverToBoxAdapter(
           ),
           SliverToBoxAdapter(
             child: Container(
-              color: Colors.white, // Cor de fundo do conteiner de baixo
+              color: Colors.white, 
               child: ListView.builder(
-                itemCount: 5, // Número de imagens no conteiner de baixo
+                itemCount: 5, 
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
                 itemBuilder: (context, index) {
                   return Container(
-                    height: 100, // Altura de cada item de imagem
+                    height: 100, 
                     child: Image.asset('images/tresplantas.png'),
                   );
                 },
